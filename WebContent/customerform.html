@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/sunny.css"/>
+<script>
+	function validatePersonal() {
+		var text = document.subscribe.first.value;
+		if (text.length == 0) return false;
+		
+		text = document.subscribe.last.value;
+		if (text.length == 0) return false;
+		
+		text = document.subscribe.address.value;
+		if (text.length == 0) return false;
+		
+		text = document.subscribe.city.value;
+		if (text.length == 0) return false;
+		
+		text = document.subscribe.state.value;
+		if (text.length != 2) return false;
+		
+		text = document.subscribe.zip.value;
+		if (isNaN(text)) return false;
+		
+		return true;
+	}
+	
+	function validateDemographics() {
+		var text = document.subscribe.ethnicity.value;
+		if (text.length == 0) return false;
+		
+		if (document.subscribe.gender[0].checked) return true;
+		if (document.subscribe.gender[1].checked) return true;
+		
+		return false;
+	}
+	
+	function doSubmit() {
+		if (validatePersonal() == false) {
+			alert("Please complete the Personal Information fields");
+			return;
+		}
+		if (validateDemographics() == false) {
+			alert("Please complete the Demographics fields");
+			return;
+		}
+		
+		document.subscribe.method="post";
+		document.subscribe.action="SunnyAcresServlet";
+		return;
+	}
+</script>
+</head>
+<body style="background-color:#F5EBCC">
+	<form name="subscribe" >
+		<div class="personal_info">
+			<h3 class="heading">Personal Information</h3>
+			<div>
+				First Name: <input type="text" name="first" />
+				Last Name: <input type="text" name="last" /><br/>
+				
+				Address: <input type="text" name="address" /><br/>
+				
+				City: <input type="text" name="city" />
+				State: <input type="text" name="state" />
+				Zip Code: <input type="text" name="zip" /><br/>
+				
+				Phone: <input type="text" name="phone" /><br/>
+				Email: <input type="text" name="email" /><br/>
+			</div>
+		</div>
+		<div>
+			<h3 class="heading">Demographic Information</h3>
+			Ethnicity:
+			<select name="ethnicity">
+				<option value="Asian">Asian</option>
+				<option value="African">African</option>
+				<option value="Black">Black</option>
+				<option value="European">European</option>
+				<option value="Hispanics">Hispanics</option>
+				<option value="White">White</option>
+				<option value="Others">Others</option>
+			</select>
+			<br/>
+			Gender:
+			<input type="radio" name="gender" value="Male"/>Male
+			<input type="radio" name="gender" value="Female"/>Female
+			<br/>
+		</div>
+		<div>
+			<h3 class="heading">Favorite Fruits</h3>
+			<div class="fruit_container">
+				<div class="fruits" style="background-image:url(Images/fruits/dragon.png)">
+					<input type="checkbox" name="fruit" value="Dragon Fruit"/>
+				</div>
+				<div class="fruits" style="background-image:url(Images/fruits/durian.png)">
+					<input type="checkbox" name="fruit" value="Durian"/>
+				</div>
+				<div class="fruits" style="background-image:url(Images/fruits/guava.png)">
+					<input type="checkbox" name="fruit" value="Guava"/>
+				</div>
+				<div class="fruits" style="background-image:url(Images/fruits/khe.png)">
+					<input type="checkbox" name="fruit" value="Star Fruit"/>
+				</div>
+				<div class="fruits" style="background-image:url(Images/fruits/lichi.png)">
+					<input type="checkbox" name="fruit" value="Lychee"/>
+				</div>
+			</div>
+			<div class="fruit_container">
+				<div class="fruits" style="background-image:url(Images/fruits/man.png)">
+					<input type="checkbox" name="fruit" value="Trai Man"/>
+				</div>
+				<div class="fruits" style="background-image:url(Images/fruits/mangcau.png)">
+					<input type="checkbox" name="fruit" value="Mang Cau"/>
+				</div>
+				<div class="fruits" style="background-image:url(Images/fruits/mangosteen.png)">
+					<input type="checkbox" name="fruit" value="Mangosteen"/>
+				</div>
+				<div class="fruits" style="background-image:url(Images/fruits/rambutan.png)">
+					<input type="checkbox" name="fruit" value="Rambutan"/>
+				</div>
+				<div class="fruits" style="background-image:url(Images/fruits/vu_sua.png)">
+					<input type="checkbox" name="fruit" value="Vu Sua"/>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h3 class="heading">Additional Comments</h3>
+			<textarea rows="5" cols="75" name="comments"></textarea>
+		</div>
+
+		<input type="submit" value="Submit" onClick="doSubmit()"/>
+	</form>
+</body>
+</html>

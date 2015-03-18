@@ -1,0 +1,128 @@
+@CHARSET "ISO-8859-1";
+
+.splash_body {
+	width: 920px;
+	min-height: 800px;
+	position: relative;
+	margin: auto;
+}
+
+.splashLogo {
+	width: 80%;
+	margin-left: 10%;
+}
+
+.splashScarecrow {
+	width: 60%;
+	margin-left: 20%;
+}
+
+.nav {
+	width: 15%;
+	min-height: 100px;
+	padding: 2%;
+	position: relative;
+	float: left;
+	
+	border-width: 5px;
+	border-left-style: outset;
+	border-bottom-style: outset;
+	border-right-style: outset;
+	border-top-style: outset;
+}
+
+.content{
+	width: 79%;
+	min-height: 800px;
+	position: relative;
+	float: right;
+	border: 0px;
+	
+	box-shadow: 6px 6px 3px #888888;
+}
+
+h2.heading {
+	width: 300px;
+}
+
+h3.heading {
+	background-color: #CC9900;
+	width: 100%;
+	margin-bottom: 10px;
+	margin-top: 10px
+}
+
+.heading{
+	width: auto;
+	font-family: sans-serif;
+	text-indent: 5%;
+	margin: 0;
+}
+
+.information {
+	width: 99%;
+	min-height: 300px;
+	position: relative;
+	padding: 1% 0 1% 1%;
+}
+
+.photo {
+	float:right;
+	padding-left:10px;
+}
+
+input[type="text"] {
+	margin-right: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 200px;
+	height: 20px;
+	border-radius: 5px;
+	padding-left: 5px;
+}
+
+input[name="address"] {
+	width: 300px;
+}
+
+input[name="city"] {
+	width: 200px;
+	margin-right: 40px;
+}
+
+input[name="state"] {
+	width: 25px;
+	margin-right: 40px;
+}
+
+input[name="zip"] {
+	width: 90px;
+	margin-right: 40px;
+}
+
+input[name="gender"] {
+	margin-left: 30px;
+}
+
+select[name="ethnicity"] {
+	width: 100px;
+	margin-left: 20px;
+}
+
+div.fruit_container {
+	height: 100px;
+	width: 90%;
+	margin-bottom: 10px;
+	padding-left: 50px;
+}
+
+div.fruits {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	position: relative;
+	float: left;
+
+	margin-left: 10px;
+	margin-right: 10px;
+}
